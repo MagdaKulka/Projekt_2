@@ -27,7 +27,7 @@ body {
 }
 .menu {
 	list-style: none;
-	display: block;
+	display: none;
 }
 .menu li {
 	display: inline-block;
@@ -44,19 +44,30 @@ body {
 	height: 200px;
 	justify-content: center;
 }
-.circle1 {
-	margin-right: 60px;
-	min-width: 200px;
-	height: 200px;
-	border-radius: 50%;
-	background-color: #f0f;
+.specialist-title {
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 42px;
+	color: #152d41;
+	margin-bottom: 50px;
+	text-align: center;
 }
-.circle {
-	margin-left: 60px;
-	min-width: 200px;
+.circle1 {
+	margin-bottom: 50px;
+	width: 200px;
 	height: 200px;
 	border-radius: 50%;
-	background-color: #f0f;
+	background-image: url('./assets/kobieta.jpeg');
+	background-size: cover;
+}
+.circle2 {
+	margin-bottom: 50px;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background-image: url('./assets/prawnik.jpeg');
+	background-size: cover;
+	background-position: right;
 }
 
 .navigation {
@@ -80,7 +91,7 @@ body {
 	background-color: dodgerblue;
 }
 .container {
-	width: 100%;
+	width: 92%;
 	margin: 0 auto;
 }
 .offers-title {
@@ -134,17 +145,19 @@ h1 {
 	align-items: center;
 }
 .employee {
+	align-items: center;
 	display: flex;
+	flex-direction: column;
 	margin-bottom: 50px;
 }
 .employee2 {
+	align-items: center;
 	display: flex;
-	flex-direction: row-reverse;
-	text-align: right;
+	flex-direction: column;
 }
 .box-container {
 	display: grid;
-	grid-template-columns: auto auto;
+	grid-template-columns: auto;
 	gap: 63px;
 	justify-content: center;
 }
@@ -194,6 +207,7 @@ h1 {
 	align-items: center;
 	flex-direction: column;
 	position: relative;
+	transition: 0.5s;
 }
 .fa-brands {
 	color: white;
@@ -205,8 +219,10 @@ h1 {
 }
 .footer-container {
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
+	justify-content: center;
 	align-items: center;
+	height: 100%;
 }
 .header-paragraf {
 	font-size: large;
@@ -218,13 +234,13 @@ h1 {
 	background-color: darkslateblue;
 	height: 71px;
 }
+.icons {
+	margin-top: 10px;
+}
 
 @media screen and (min-width: 768px) {
-	.menu-box {
-		flex-direction: column;
-	}
 	.menu {
-		margin-top: 20px;
+		display: block;
 	}
 	.header h1 {
 		font-size: 24px;
@@ -236,17 +252,47 @@ h1 {
 		font-size: 12px;
 		padding: 10px 20px;
 	}
-	.employee,
+	.employee {
+		flex-direction: row;
+	}
 	.employee2 {
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
+		flex-direction: row-reverse;
+		text-align: right;
 	}
-	.employee .circle1,
-	.employee2 .circle {
-		display: none;
+	.circle1 {
+		margin-bottom: 0;
+		margin-right: 60px;
+		min-width: 200px;
 	}
+	.circle2 {
+		margin-bottom: 0;
+		margin-left: 60px;
+		min-width: 200px;
+	}
+
 	.offers-title {
 		font-size: 24px;
+	}
+	.box-container {
+		grid-template-columns: auto auto;
+	}
+	.footer-container {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.icons {
+		margin: 0;
+	}
+	.specialist-title {
+		text-align: left;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.box-container {
+		grid-template-columns: auto auto auto;
+	}
+	.box:hover {
+		transform: scale(1.05);
 	}
 }
